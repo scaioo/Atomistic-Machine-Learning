@@ -1,0 +1,5 @@
+*.lmdb
+*.lmdb-lock
+*.json.bz2
+*.json
+*.txt
