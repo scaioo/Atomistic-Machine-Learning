@@ -1,0 +1,148 @@
+// Alexandria Entry Structure
+digraph {
+	root [label=Root]
+	"@module" [label="@module"]
+	root -> "@module"
+	"@class" [label="@class"]
+	root -> "@class"
+	energy [label=energy]
+	root -> energy
+	composition [label=composition]
+	root -> composition
+	"composition.Pr" [label=Pr]
+	composition -> "composition.Pr"
+	"composition.Nd" [label=Nd]
+	composition -> "composition.Nd"
+	"composition.Y" [label=Y]
+	composition -> "composition.Y"
+	"composition.Sc" [label=Sc]
+	composition -> "composition.Sc"
+	entry_id [label=entry_id]
+	root -> entry_id
+	correction [label=correction]
+	root -> correction
+	energy_adjustments [label=energy_adjustments]
+	root -> energy_adjustments
+	"energy_adjustments.[0]" [label="[0]"]
+	energy_adjustments -> "energy_adjustments.[0]"
+	"energy_adjustments.[0].@module" [label="@module"]
+	"energy_adjustments.[0]" -> "energy_adjustments.[0].@module"
+	"energy_adjustments.[0].@class" [label="@class"]
+	"energy_adjustments.[0]" -> "energy_adjustments.[0].@class"
+	"energy_adjustments.[0].@version" [label="@version"]
+	"energy_adjustments.[0]" -> "energy_adjustments.[0].@version"
+	"energy_adjustments.[0].value" [label=value]
+	"energy_adjustments.[0]" -> "energy_adjustments.[0].value"
+	parameters [label=parameters]
+	root -> parameters
+	data [label=data]
+	root -> data
+	"data.mat_id" [label=mat_id]
+	data -> "data.mat_id"
+	"data.prototype_id" [label=prototype_id]
+	data -> "data.prototype_id"
+	"data.location" [label=location]
+	data -> "data.location"
+	"data.formula" [label=formula]
+	data -> "data.formula"
+	"data.elements" [label=elements]
+	data -> "data.elements"
+	"data.elements.[…]" [label="[…]"]
+	"data.elements" -> "data.elements.[…]"
+	"data.spg" [label=spg]
+	data -> "data.spg"
+	"data.nsites" [label=nsites]
+	data -> "data.nsites"
+	"data.stress" [label=stress]
+	data -> "data.stress"
+	"data.stress.[…]" [label="[…]"]
+	"data.stress" -> "data.stress.[…]"
+	"data.energy_total" [label=energy_total]
+	data -> "data.energy_total"
+	"data.total_mag" [label=total_mag]
+	data -> "data.total_mag"
+	"data.band_gap_ind" [label=band_gap_ind]
+	data -> "data.band_gap_ind"
+	"data.band_gap_dir" [label=band_gap_dir]
+	data -> "data.band_gap_dir"
+	"data.dos_ef" [label=dos_ef]
+	data -> "data.dos_ef"
+	"data.energy_corrected" [label=energy_corrected]
+	data -> "data.energy_corrected"
+	"data.e_above_hull" [label=e_above_hull]
+	data -> "data.e_above_hull"
+	"data.e_form" [label=e_form]
+	data -> "data.e_form"
+	"data.e_phase_separation" [label=e_phase_separation]
+	data -> "data.e_phase_separation"
+	"data.decomposition" [label=decomposition]
+	data -> "data.decomposition"
+	"data.in_nomad" [label=in_nomad]
+	data -> "data.in_nomad"
+	structure [label=structure]
+	root -> structure
+	"structure.@module" [label="@module"]
+	structure -> "structure.@module"
+	"structure.@class" [label="@class"]
+	structure -> "structure.@class"
+	"structure.charge" [label=charge]
+	structure -> "structure.charge"
+	"structure.lattice" [label=lattice]
+	structure -> "structure.lattice"
+	"structure.lattice.matrix" [label=matrix]
+	"structure.lattice" -> "structure.lattice.matrix"
+	"structure.lattice.matrix.[…]" [label="[…]"]
+	"structure.lattice.matrix" -> "structure.lattice.matrix.[…]"
+	"structure.lattice.pbc" [label=pbc]
+	"structure.lattice" -> "structure.lattice.pbc"
+	"structure.lattice.pbc.[…]" [label="[…]"]
+	"structure.lattice.pbc" -> "structure.lattice.pbc.[…]"
+	"structure.lattice.a" [label=a]
+	"structure.lattice" -> "structure.lattice.a"
+	"structure.lattice.b" [label=b]
+	"structure.lattice" -> "structure.lattice.b"
+	"structure.lattice.c" [label=c]
+	"structure.lattice" -> "structure.lattice.c"
+	"structure.lattice.alpha" [label=alpha]
+	"structure.lattice" -> "structure.lattice.alpha"
+	"structure.lattice.beta" [label=beta]
+	"structure.lattice" -> "structure.lattice.beta"
+	"structure.lattice.gamma" [label=gamma]
+	"structure.lattice" -> "structure.lattice.gamma"
+	"structure.lattice.volume" [label=volume]
+	"structure.lattice" -> "structure.lattice.volume"
+	"structure.properties" [label=properties]
+	structure -> "structure.properties"
+	"structure.sites" [label=sites]
+	structure -> "structure.sites"
+	"structure.sites.[0]" [label="[0]"]
+	"structure.sites" -> "structure.sites.[0]"
+	"structure.sites.[0].species" [label=species]
+	"structure.sites.[0]" -> "structure.sites.[0].species"
+	"structure.sites.[0].species.[0]" [label="[0]"]
+	"structure.sites.[0].species" -> "structure.sites.[0].species.[0]"
+	"structure.sites.[0].species.[0].element" [label=element]
+	"structure.sites.[0].species.[0]" -> "structure.sites.[0].species.[0].element"
+	"structure.sites.[0].species.[0].occu" [label=occu]
+	"structure.sites.[0].species.[0]" -> "structure.sites.[0].species.[0].occu"
+	"structure.sites.[0].abc" [label=abc]
+	"structure.sites.[0]" -> "structure.sites.[0].abc"
+	"structure.sites.[0].abc.[…]" [label="[…]"]
+	"structure.sites.[0].abc" -> "structure.sites.[0].abc.[…]"
+	"structure.sites.[0].xyz" [label=xyz]
+	"structure.sites.[0]" -> "structure.sites.[0].xyz"
+	"structure.sites.[0].xyz.[…]" [label="[…]"]
+	"structure.sites.[0].xyz" -> "structure.sites.[0].xyz.[…]"
+	"structure.sites.[0].properties" [label=properties]
+	"structure.sites.[0]" -> "structure.sites.[0].properties"
+	"structure.sites.[0].properties.magmom" [label=magmom]
+	"structure.sites.[0].properties" -> "structure.sites.[0].properties.magmom"
+	"structure.sites.[0].properties.charge" [label=charge]
+	"structure.sites.[0].properties" -> "structure.sites.[0].properties.charge"
+	"structure.sites.[0].properties.forces" [label=forces]
+	"structure.sites.[0].properties" -> "structure.sites.[0].properties.forces"
+	"structure.sites.[0].properties.forces.[…]" [label="[…]"]
+	"structure.sites.[0].properties.forces" -> "structure.sites.[0].properties.forces.[…]"
+	"structure.sites.[0].label" [label=label]
+	"structure.sites.[0]" -> "structure.sites.[0].label"
+}
