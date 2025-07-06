@@ -13,7 +13,7 @@ def convert_decimal(obj):
     else:
         return obj
 
-input_file = "../Alexandria_dataset/alexandria_000.json.bz2"
+input_file = "../Datasets//Alexandria_dataset/alexandria_000.json.bz2"
 
 with bz2.open(input_file, "rt") as f:
     parser = ijson.items(f, "entries.item")

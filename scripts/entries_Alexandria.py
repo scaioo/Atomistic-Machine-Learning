@@ -1,7 +1,7 @@
 import lmdb
 import os
 
-base_path = "../Alexandria/alexandria_3D-pbe/"  # Adjust here
+base_path = "../Datasets/Alexandria_dataset_lmdb/alexandria_3D_pbe/"  # Adjust here
 
 # Find all folders ending with .lmdb
 lmdb_folders = [f for f in os.listdir(base_path) if f.endswith('.lmdb')]

@@ -1,6 +1,6 @@
 from matsciml.lightning.data_utils import MatSciMLDataModule
 
-filepath = "../Alexandria/alexandria_3D_scan"
+filepath = "../Datasets/Alexandria_dataset_lmdb/alexandria_3D_pbe"
 datamodule = MatSciMLDataModule(
     dataset="AlexandriaDataset",  # Correct registered name
     train_path=filepath,

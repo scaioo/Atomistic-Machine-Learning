@@ -40,37 +40,68 @@ import json
 import re
 from pymatgen.core import Composition
 
-INPUT_DIR = "../Alexandria_dataset"
+INPUT_DIR = "../Datasets/Alexandria_dataset/"
 OUTPUT_DIR = "results/compositions"
 CHUNK_SIZE = 100000
 
 FILES_TO_PROCESS = [
+    "alexandria_000.json.bz2",
     "alexandria_001.json.bz2",
+    "alexandria_002.json.bz2",
+    "alexandria_003.json.bz2",
+    "alexandria_004.json.bz2",
+    "alexandria_005.json.bz2",
+    "alexandria_006.json.bz2",
+    "alexandria_007.json.bz2",
     "alexandria_008.json.bz2",
+    "alexandria_009.json.bz2",
+    "alexandria_010.json.bz2",
+    "alexandria_011.json.bz2",
     "alexandria_012.json.bz2",
     "alexandria_013.json.bz2",
+    "alexandria_014.json.bz2",
+    "alexandria_015.json.bz2",
     "alexandria_016.json.bz2",
     "alexandria_017.json.bz2",
     "alexandria_018.json.bz2",
+    "alexandria_019.json.bz2",
+    "alexandria_020.json.bz2",
+    "alexandria_021.json.bz2",
+    "alexandria_022.json.bz2",
+    "alexandria_023.json.bz2",
     "alexandria_024.json.bz2",
+    "alexandria_025.json.bz2",
+    "alexandria_026.json.bz2",
     "alexandria_027.json.bz2",
+    "alexandria_028.json.bz2",
     "alexandria_029.json.bz2",
+    "alexandria_030.json.bz2",
+    "alexandria_031.json.bz2",
+    "alexandria_032.json.bz2",
     "alexandria_033.json.bz2",
     "alexandria_034.json.bz2",
     "alexandria_035.json.bz2",
+    "alexandria_036.json.bz2",
     "alexandria_037.json.bz2",
     "alexandria_038.json.bz2",
+    "alexandria_039.json.bz2",
     "alexandria_040.json.bz2",
     "alexandria_041.json.bz2",
+    "alexandria_042.json.bz2",
     "alexandria_043.json.bz2",
+    "alexandria_044.json.bz2",
     "alexandria_045.json.bz2",
+    "alexandria_046.json.bz2",
+    "alexandria_047.json.bz2",
+    "alexandria_048.json.bz2",
     "alexandria_049.json.bz2",
+    "alexandria_050.json.bz2",
 ]
 
 def safe_json_loads(data_str):
     data_str = re.sub(r'\bNaN\b', '"NaN"', data_str)
     return json.loads(data_str)
-
+'''
 def process_entries(entries, start_idx=0):
     out = []
     for i, entry in enumerate(entries):
@@ -81,7 +112,21 @@ def process_entries(entries, start_idx=0):
         #print(f"   → Reduced formula: {reduced_formula}")
         formatted_str = ", ".join(f"{el}:{amt}" for el, amt in comp_dict.items())
         out.append(formatted_str)
+    return out'''
+
+def process_entries(entries, start_idx=0):
+    out = []
+    for i, entry in enumerate(entries):
+        comp_dict = entry.get("composition", {})
+        data = entry.get("data", {})
+        mat_id = data.get("mat_id", "unknown")
+
+        comp = Composition(comp_dict)
+        formatted_str = ", ".join(f"{el}:{amt}" for el, amt in comp_dict.items())
+
+        out.append(f"{mat_id} {formatted_str}")
     return out
+
 
 def process_file(filepath):
     filename = os.path.basename(filepath)
